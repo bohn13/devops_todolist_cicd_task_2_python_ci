@@ -14,6 +14,8 @@ env:
 
 jobs:
   python-ci:
+
+
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -60,3 +62,11 @@ jobs:
         with:
           name: python-code-package
           path: ./src
+  build-image:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: python-code-package
+      
