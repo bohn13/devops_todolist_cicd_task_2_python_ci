@@ -85,6 +85,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v7
         with:
-          context: ./src
+          context: .
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.DOCKER_IMAGE_NAME }}:${{github.sha}}
